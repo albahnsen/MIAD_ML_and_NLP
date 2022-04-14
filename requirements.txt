@@ -38,3 +38,4 @@ urllib3==1.26.9
 wcwidth==0.2.5
 yarg==0.1.9
 scikit-learn==1.0.2
+xgboost==1.6.0rc1
