@@ -9,11 +9,11 @@ app = Flask(__name__)
 api = Api(
     app, 
     version='1.0', 
-    title='Phishing Prediction API',
-    description='Phishing Prediction API')
+    title='Car Predict',
+    description='Car Prediction API')
 
 ns = api.namespace('predict', 
-     description='Phishing Classifier')
+     description='Car select Regressor')
    
 parser = api.parser()
 
