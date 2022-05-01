@@ -21,20 +21,37 @@ parser.add_argument(
     'Year',   
     type=int, 
     required=True, 
+    help='Please add Year,Mileage,State,Make,Model', 
+    location='args')
+
+parser.add_argument(
     'Mileage',   
     type=str, 
     required=True,
+    help='Please add Year,Mileage,State,Make,Model', 
+    location='args')
+
+parser.add_argument(
     'State',   
     type=int, 
     required=True, 
+    help='Please add Year,Mileage,State,Make,Model', 
+    location='args')
+
+parser.add_argument(
     'Make',   
     type=str, 
     required=True, 
+    help='Please add Year,Mileage,State,Make,Model', 
+    location='args')
+
+parser.add_argument(
     'Model',   
     type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
+
 
 resource_fields = api.model('Resource', {
     'result': fields.String,
