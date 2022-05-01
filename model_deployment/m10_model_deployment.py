@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This Python file uses the following encoding: utf-8
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import joblib
@@ -13,14 +14,13 @@ def predict_proba(Year,Mileage,State,Make,Model):
     
   
     # Create features
-    # Codificación variables categóricas
     le_State = LabelEncoder()
     le_Make = LabelEncoder()
     le_Model = LabelEncoder()
     df['State_encoded'] = le_State.fit_transform(df.State)
     df['Make_encoded'] = le_Make.fit_transform(df.Make)
     df['Model_encoded'] = le_Model.fit_transform(df.Model)
-    df_2=df[['Year',	'Mileage',	'State_encoded','Make_encoded',	'Model_encoded']]
+    df_2=df[['Year','Mileage','State_encoded','Make_encoded','Model_encoded']]
 
     # Make prediction
     p1 = reg.predict(df_2)
