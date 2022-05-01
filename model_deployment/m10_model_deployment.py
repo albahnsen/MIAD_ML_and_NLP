@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
         url = sys.argv[1]
 
-        p1 = predict_proba(df_2)
+        p1 = predict_proba(Year,Mileage,State,Make,Model)
         
         print(df)
         print('Probability of Phishing: ', p1)
