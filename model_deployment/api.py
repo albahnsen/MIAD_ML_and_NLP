@@ -9,8 +9,8 @@ app = Flask(__name__)
 api = Api(
     app, 
     version='1.0', 
-    title='Car Predict',
-    description='Car Prediction API')
+    title='Car_Predict',
+    description='Car_Prediction_API')
 
 ns = api.namespace('predict', 
      description='Car select Regressor')
@@ -21,7 +21,7 @@ parser.add_argument(
     'Year',   
     type=int, 
     required=True, 
-    help='Please add Year,Mileage,State,Make,Model', 
+    help='Please add Year, Mileage, State, Make, Model', 
     location='args')
 
 parser.add_argument(
