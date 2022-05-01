@@ -2,7 +2,7 @@
 from flask import Flask
 from flask_restplus import Api, Resource, fields
 import joblib
-from m09_model_deployment import predict_proba
+from m10_model_deployment import predict_proba
 
 app = Flask(__name__)
 
@@ -18,10 +18,10 @@ ns = api.namespace('predict',
 parser = api.parser()
 
 parser.add_argument(
-    'URL', 
-    type=str, 
+    df_2, 
+    #type=str, 
     required=True, 
-    help='URL to be analyzed', 
+    help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 resource_fields = api.model('Resource', {
@@ -37,7 +37,7 @@ class PhishingApi(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_proba(args['URL'])
+         "result": predict_proba(args[df_2])
         }, 200
     
     
