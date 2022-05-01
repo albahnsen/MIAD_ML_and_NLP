@@ -18,7 +18,7 @@ ns = api.namespace('predict',
 parser = api.parser()
 
 parser.add_argument(
-    'Year',   
+    Year,   
     type=int, 
     required=True, 
     help='Please add Year, Mileage, State, Make, Model', 
