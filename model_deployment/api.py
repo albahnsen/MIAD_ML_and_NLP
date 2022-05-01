@@ -18,8 +18,20 @@ ns = api.namespace('predict',
 parser = api.parser()
 
 parser.add_argument(
-    'Year', 
-    #type=str, 
+    'Year',   
+    type=int, 
+    required=True, 
+    'Mileage',   
+    type=str, 
+    required=True,
+    'State',   
+    type=int, 
+    required=True, 
+    'Make',   
+    type=str, 
+    required=True, 
+    'Model',   
+    type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
@@ -37,7 +49,7 @@ class PhishingApi(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_proba(args[df_2])
+         "result": predict_proba(args['Year','Mileage','State','Make','Model'])
         }, 200
     
     
