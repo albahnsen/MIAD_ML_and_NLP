@@ -26,14 +26,14 @@ parser.add_argument(
 
 parser.add_argument(
     'Mileage',   
-    type=str, 
+    type=int, 
     required=True,
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
     'State',   
-    type=int, 
+    type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
