@@ -33,21 +33,21 @@ parser.add_argument(
 
 parser.add_argument(
     'State',   
-    type=varchar(max), 
+    type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
     'Make',   
-    type=varchar(max), 
+    type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
     'Model',   
-    type=varchar(max), 
+    type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
