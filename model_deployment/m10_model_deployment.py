@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # This Python file uses the following encoding: utf-8
 from sklearn.preprocessing import LabelEncoder
-from xgboost import XGBRegressor
+from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 import joblib
 import sys
