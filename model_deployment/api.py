@@ -58,7 +58,7 @@ resource_fields = api.model('Resource', {
 })
 
 @ns.route('/')
-class PhishingApi(Resource):
+class CarPriceApi(Resource):
 
     @api.doc(parser=parser)
     @api.marshal_with(resource_fields)
