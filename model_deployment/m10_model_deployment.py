@@ -7,7 +7,7 @@ import os
 
 def predict_proba(Year,Mileage,State,Make,Model):
 
-    clf = joblib.load(os.path.dirname(__file__) + '/phishing_clf.pkl') 
+    reg = joblib.load(os.path.dirname(__file__) + '/phishing_clf.pkl') 
     d = {'Year': [Year], 'Mileage': [Mileage],'State': [State], 'Make': [Make], 'Model': [Model]}
     df = pd.DataFrame(data=d)
     
@@ -23,7 +23,7 @@ def predict_proba(Year,Mileage,State,Make,Model):
     df_2=df[['Year',	'Mileage',	'State_encoded','Make_encoded',	'Model_encoded']]
 
     # Make prediction
-    p1 = rfreg.predict(df)
+    p1 = reg.predict(df)
 
     return p1
 
