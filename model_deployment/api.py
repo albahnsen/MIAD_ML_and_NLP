@@ -66,7 +66,7 @@ class PhishingApi(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_proba(args[['Year','Mileage','State','Make','Model']])
+         "result": predict_proba(args['Year'],args['Mileage'],args['State'],args['Make'],args['Model'])
         }, 200
     
     
