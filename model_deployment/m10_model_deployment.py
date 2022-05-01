@@ -31,12 +31,12 @@ def predict_proba(Year,Mileage,State,Make,Model):
 
 if __name__ == "__main__":
     
-    if len(sys.argv) == 1:
+    if len(sys.argv) == 5:
         print('Please add Year,Mileage,State,Make,Model')
         
     else:
 
-        url = sys.argv[1]
+        df = sys.argv[5]
 
         p1 = predict_proba(Year,Mileage,State,Make,Model)
         
