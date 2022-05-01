@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# This Python file uses the following encoding: utf-8
+
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBRegressor
 import pandas as pd
@@ -31,7 +31,7 @@ def predict_proba(Year,Mileage,State,Make,Model):
 
 if __name__ == "__main__":
     
-    if len(sys.argv) == 5:
+    if len(sys.argv) == 0:
         print('Please add Year,Mileage,State,Make,Model')
         
     else:
@@ -41,4 +41,4 @@ if __name__ == "__main__":
         p1 = predict_proba(Year,Mileage,State,Make,Model)
         
         print(df)
-        print('Probability of Phishing: ', p1)
+        print('Car Price: ', p1)
