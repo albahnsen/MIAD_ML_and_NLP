@@ -18,35 +18,35 @@ ns = api.namespace('predict',
 parser = api.parser()
 
 parser.add_argument(
-    Year,   
+    "Year",   
     type=int, 
     required=True, 
     help='Please add Year, Mileage, State, Make, Model', 
     location='args')
 
 parser.add_argument(
-    'Mileage',   
+    "Mileage",   
     type=int, 
     required=True,
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
-    'State',   
+    "State",   
     type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
-    'Make',   
+    "Make",   
     type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
     location='args')
 
 parser.add_argument(
-    'Model',   
+    "Model",   
     type=str, 
     required=True, 
     help='Please add Year,Mileage,State,Make,Model', 
