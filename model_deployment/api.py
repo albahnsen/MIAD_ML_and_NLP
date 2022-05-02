@@ -21,35 +21,35 @@ parser.add_argument(
     "Year",   
     type=int, 
     required=True, 
-    help='Please add Year, Mileage, State, Make, Model', 
+    help='Please add Year', 
     location='args')
 
 parser.add_argument(
     "Mileage",   
     type=int, 
     required=True,
-    help='Please add Year,Mileage,State,Make,Model', 
+    help='Please add Mileage', 
     location='args')
 
 parser.add_argument(
     "State",   
     type=str, 
     required=True, 
-    help='Please add Year,Mileage,State,Make,Model', 
+    help='Please add State', 
     location='args')
 
 parser.add_argument(
     "Make",   
     type=str, 
     required=True, 
-    help='Please add Year,Mileage,State,Make,Model', 
+    help='Please add Make', 
     location='args')
 
 parser.add_argument(
     "Model",   
     type=str, 
     required=True, 
-    help='Please add Year,Mileage,State,Make,Model', 
+    help='Please add Model', 
     location='args')
 
 
