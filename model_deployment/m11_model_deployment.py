@@ -5,6 +5,7 @@ import pandas as pd
 import joblib
 import sys
 import os
+import nltk
 from nltk.corpus import stopwords
 import re
 import random
