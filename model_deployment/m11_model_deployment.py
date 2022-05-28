@@ -8,6 +8,8 @@ import os
 from nltk.corpus import stopwords
 import re
 import random
+nltk.download('punkt')
+nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 def clean_text(text):
