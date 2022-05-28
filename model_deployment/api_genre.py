@@ -26,7 +26,7 @@ parser.add_argument(
 
 
 resource_fields = api.model('Resource', {
-    'text': fields.String,
+    'result': fields.String,
 })
 
 @ns.route('/')
