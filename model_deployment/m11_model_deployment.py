@@ -50,8 +50,6 @@ def extraer_prediccion(proba, clases):
 
 def predict_proba(text):
     
-    cleanning = joblib.load('../model_deployment/cleanning.pkl') 
-    sw = joblib.load('../model_deployment/stop_wors.pkl')
     tf_vect = joblib.load('../model_deployment/vectorizer.pkl')
     clf = joblib.load('../model_deployment/genre_clf.pkl')
 
