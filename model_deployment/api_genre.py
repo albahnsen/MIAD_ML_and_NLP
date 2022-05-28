@@ -38,7 +38,7 @@ class Genre_Proba_Api(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_proba(args['text'])
+         "result": predict_proba(args['Plot'])
         }, 200
     
     
