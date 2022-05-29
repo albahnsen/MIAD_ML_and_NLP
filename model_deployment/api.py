@@ -2,34 +2,67 @@
 from flask import Flask
 from flask_restplus import Api, Resource, fields
 import joblib
-from m09_model_deployment import predict_proba
+from m10_model_deployment import predict_proba
 
 app = Flask(__name__)
 
 api = Api(
     app, 
     version='1.0', 
-    title='Phishing Prediction API',
-    description='Phishing Prediction API')
+    title='Car_Predict',
+    description='Car_Prediction_API')
 
 ns = api.namespace('predict', 
-     description='Phishing Classifier')
+     description='Car select Regressor')
    
 parser = api.parser()
 
 parser.add_argument(
-    'URL', 
-    type=str, 
+    "Year",   
+    type=int, 
     required=True, 
-    help='URL to be analyzed', 
+    help='Please add Year', 
     location='args')
 
+parser.add_argument(
+    "Mileage",   
+    type=int, 
+    required=True,
+    help='Please add Mileage', 
+    location='args')
+
+parser.add_argument(
+    "State",   
+    type=str, 
+    required=True, 
+    help='Please add State', 
+    location='args')
+
+parser.add_argument(
+    "Make",   
+    type=str, 
+    required=True, 
+    help='Please add Make', 
+    location='args')
+
+parser.add_argument(
+    "Model",   
+    type=str, 
+    required=True, 
+    help='Please add Model', 
+    location='args')
+
+
 resource_fields = api.model('Resource', {
-    'result': fields.String,
+    'Year': fields.Integer,
+    'Mileage': fields.Integer,
+    'State': fields.String,
+    'Make': fields.String,
+    'Model': fields.String
 })
 
 @ns.route('/')
-class PhishingApi(Resource):
+class CarPriceApi(Resource):
 
     @api.doc(parser=parser)
     @api.marshal_with(resource_fields)
@@ -37,7 +70,7 @@ class PhishingApi(Resource):
         args = parser.parse_args()
         
         return {
-         "result": predict_proba(args['URL'])
+         "result": predict_proba(args['Year'],args['Mileage'],args['State'],args['Make'],args['Model'])
         }, 200
     
     
