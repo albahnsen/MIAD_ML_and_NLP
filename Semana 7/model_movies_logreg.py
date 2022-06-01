@@ -4,12 +4,16 @@ import pandas as pd
 import joblib
 import sys
 import os
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.linear_model import LogisticRegression
 
-def predict_proba(url):
+def predict_movies(plot):
 
-    clf = joblib.load(os.path.dirname(__file__) + '/phishing_clf.pkl') 
+    clf = pickle.load(open('model_movies.pkl', 'rb'))
+    vect = pickle.load(open('vect_movies.pkl', 'rb'))
 
-    url_ = pd.DataFrame([url], columns=['url'])
+    plot_ = pd.DataFrame([url], columns=['url'])
   
     # Create features
     keywords = ['https', 'login', '.php', '.html', '@', 'sign']
@@ -23,9 +27,9 @@ def predict_proba(url):
     url_['count_com'] = url_.url.str.count('com')
 
     # Make prediction
-    p1 = clf.predict_proba(url_.drop('url', axis=1))[0,1]
-
-    return p1
+    genero = clf.predict(data)[0].astype(str)
+    
+    return genero
 
 
 if __name__ == "__main__":

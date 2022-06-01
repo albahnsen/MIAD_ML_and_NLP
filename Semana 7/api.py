@@ -2,26 +2,26 @@
 from flask import Flask
 from flask_restplus import Api, Resource, fields
 import joblib
-from m09_model_deployment import predict_proba
+from model_movies_logreg import predict_movies
 
 app = Flask(__name__)
 
 api = Api(
     app, 
     version='1.0', 
-    title='Phishing Prediction API',
-    description='Phishing Prediction API')
+    title='Clasificación de género de películas',
+    description='API para Clasificación de género de películas')
 
 ns = api.namespace('predict', 
-     description='Phishing Classifier')
+     description='Movies Classifier')
    
 parser = api.parser()
 
 parser.add_argument(
-    'URL', 
+    'Descripcion', 
     type=str, 
     required=True, 
-    help='URL to be analyzed', 
+    help='Descripcion to be analyzed', 
     location='args')
 
 resource_fields = api.model('Resource', {
@@ -29,7 +29,7 @@ resource_fields = api.model('Resource', {
 })
 
 @ns.route('/')
-class PhishingApi(Resource):
+class MoviesApi(Resource):
 
     @api.doc(parser=parser)
     @api.marshal_with(resource_fields)
